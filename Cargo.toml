@@ -1,6 +1,6 @@
 [package]
 name = "daisy-embassy"
-version = "0.2.3"
+dsversion = "0.2.3"
 edition = "2024"
 authors = ["DicklessGreat<dicklessgreat@gmail.com>"]
 description = "async audio development with daisy seed and embassy"
@@ -25,6 +25,12 @@ defmt = "1.0.1"
 grounded = "0.2.0"
 wm8731 = "0.1.0"
 stm32-fmc = "0.4.0"
+faust-types = { path = "../rust-faust/faust-types" }
+default-boxed = "0.2"
+
+[build-dependencies]
+faust-build = "0.2.1"
+
 
 [dev-dependencies]
 cortex-m = { version = "0.7.6", features = ["inline-asm", "critical-section-single-core"] }
@@ -43,7 +49,9 @@ heapless = { version = "0.8", default-features = false }
 micromath = "2.0.0"
 
 [features]
-default = ["seed_1_1"]
+default = ["seed_1_2"]
+default-boxed = []
+cute-dsp = []
 
 seed = []
 seed_1_1 = []
